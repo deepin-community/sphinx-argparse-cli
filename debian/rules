@@ -1,4 +1,10 @@
 #!/usr/bin/make -f
 
+export PYBUILD_NAME=sphinx-argparse-cli
+
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
+
+# the "roots" directory, containing test data for the test suite, is only
+# distributed in git, and not the tarball, so we cannot run tests
+override_dh_auto_test:

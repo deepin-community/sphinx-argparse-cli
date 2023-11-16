@@ -1,5 +1,20 @@
-template-repository (1.0-1) unstable; urgency=medium
+sphinx-argparse-cli (1.11.1-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
+  * No-op d/rules cleanup:
+    - Drop SETUPTOOLS_SCM_PRETEND_VERSION export, as dh-python >= 5.20230130
+      does this automatically.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Faidon Liambotis <paravoid@debian.org>  Thu, 03 Aug 2023 15:21:45 +0300
+
+sphinx-argparse-cli (1.11.0-2) unstable; urgency=medium
+
+  * Source-only upload.
+
+ -- Faidon Liambotis <paravoid@debian.org>  Mon, 27 Feb 2023 21:16:07 +0200
+
+sphinx-argparse-cli (1.11.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1031300)
+
+ -- Faidon Liambotis <paravoid@debian.org>  Tue, 14 Feb 2023 21:00:28 +0200

@@ -1,3 +1,39 @@
+Metadata-Version: 2.1
+Name: sphinx-argparse-cli
+Version: 1.11.1
+Summary: render CLI arguments (sub-commands friendly) defined by argparse module
+Project-URL: Documentation, https://github.com/tox-dev/sphinx-argparse-cli#sphinx-argparse-cli
+Project-URL: Homepage, https://github.com/tox-dev/sphinx-argparse-cli
+Project-URL: Source, https://github.com/tox-dev/sphinx-argparse-cli
+Project-URL: Tracker, https://github.com/tox-dev/sphinx-argparse-cli/issues
+Maintainer-email: Bernat Gabor <gaborjbernat@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Keywords: argparse,sphinx
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Framework :: Sphinx
+Classifier: Framework :: Sphinx :: Extension
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Documentation
+Classifier: Topic :: Documentation :: Sphinx
+Requires-Python: >=3.8
+Requires-Dist: sphinx>=7.0.1
+Provides-Extra: test
+Requires-Dist: covdefaults>=2.3; extra == 'test'
+Requires-Dist: pytest-cov>=4.1; extra == 'test'
+Requires-Dist: pytest>=7.3.2; extra == 'test'
+Description-Content-Type: text/markdown
+
 # sphinx-argparse-cli
 
 [![PyPI](https://img.shields.io/pypi/v/sphinx-argparse-cli?style=flat-square)](https://pypi.org/project/sphinx-argparse-cli)
