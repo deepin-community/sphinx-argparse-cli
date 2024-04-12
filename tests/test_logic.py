@@ -99,6 +99,37 @@ def test_empty_description_as_text(build_outcome: str) -> None:
     assert build_outcome == "foo - CLI interface\n*******************\n\n   foo\n"
 
 
+@pytest.mark.sphinx(buildername="html", testroot="description-multiline")
+def test_multiline_description_as_html(build_outcome: str) -> None:
+    ref = (
+        "This description\nspans multiple lines.\n\n  this line is indented.\n    and also this.\n\nNow this should be"
+        " a separate paragraph.\n"
+    )
+    assert ref in build_outcome
+
+    ref = "This group description\n\nspans multiple lines.\n"
+    assert ref in build_outcome
+
+
+@pytest.mark.sphinx(buildername="text", testroot="epilog-set")
+def test_set_epilog_as_text(build_outcome: str) -> None:
+    assert build_outcome == "foo - CLI interface\n*******************\n\n   foo\n\nMy own epilog\n"
+
+
+@pytest.mark.sphinx(buildername="text", testroot="epilog-empty")
+def test_empty_epilog_as_text(build_outcome: str) -> None:
+    assert build_outcome == "foo - CLI interface\n*******************\n\n   foo\n"
+
+
+@pytest.mark.sphinx(buildername="html", testroot="epilog-multiline")
+def test_multiline_epilog_as_html(build_outcome: str) -> None:
+    ref = (
+        "This epilog\nspans multiple lines.\n\n  this line is indented.\n    and also this.\n\nNow this should be"
+        " a separate paragraph.\n"
+    )
+    assert ref in build_outcome
+
+
 @pytest.mark.sphinx(buildername="text", testroot="complex")
 @pytest.mark.prepare(directive_args=[":usage_width: 100"])
 def test_usage_width_default(build_outcome: str) -> None:
@@ -109,6 +140,18 @@ def test_usage_width_default(build_outcome: str) -> None:
 @pytest.mark.prepare(directive_args=[":usage_width: 50"])
 def test_usage_width_custom(build_outcome: str) -> None:
     assert "complex second [-h] [--flag] [--root]\n" in build_outcome
+
+
+@pytest.mark.sphinx(buildername="text", testroot="complex")
+@pytest.mark.prepare(directive_args=[":usage_first:"])
+def test_set_usage_first(build_outcome: str) -> None:
+    assert "complex [-h]" in build_outcome.split("argparse tester")[0]
+    assert "complex first [-h]" in build_outcome.split("a-first-desc")[0]
+
+
+@pytest.mark.sphinx(buildername="text", testroot="suppressed-action")
+def test_suppressed_action(build_outcome: str) -> None:
+    assert "--activities-since" not in build_outcome
 
 
 @pytest.mark.parametrize(
@@ -254,3 +297,16 @@ foo positional arguments
 * **"x"** - arg (default: True)
 """
     )
+
+
+@pytest.mark.sphinx(buildername="html", testroot="nested")
+def test_nested_content(build_outcome: str) -> None:
+    assert '<section id="basic-1---CLI-interface">' in build_outcome
+    assert "<h1>basic-1 - CLI interface" in build_outcome
+    assert "<h2>basic-1 opt" in build_outcome
+    assert "<p>Some text inside first directive.</p>" in build_outcome
+    assert '<section id="basic-2---CLI-interface">' in build_outcome
+    assert "<h2>basic-2 - CLI interface" in build_outcome
+    assert "<h3>basic-2 opt" in build_outcome
+    assert "<p>Some text inside second directive.</p>" in build_outcome
+    assert "<p>Some text after directives.</p>" in build_outcome

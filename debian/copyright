@@ -4,12 +4,12 @@ Upstream-Name: sphinx-argparse-cli
 
 Files: *
 Copyright:
- 2021-2022 Bernát Gábor <gaborjbernat@gmail.com>
+ 2021-2024 Bernát Gábor <gaborjbernat@gmail.com>
 License: Expat
 
 Files: debian/*
 Copyright:
- 2023 Faidon Liambotis <paravoid@debian.org>
+ 2023-2024 Faidon Liambotis <paravoid@debian.org>
 License: Expat
 
 License: Expat
