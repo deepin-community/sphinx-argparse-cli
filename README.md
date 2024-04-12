@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/sphinx-argparse-cli?style=flat-square)](https://pypi.org/project/sphinx-argparse-cli)
 [![PyPI - Implementation](https://img.shields.io/pypi/implementation/sphinx-argparse-cli?style=flat-square)](https://pypi.org/project/sphinx-argparse-cli)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sphinx-argparse-cli?style=flat-square)](https://pypi.org/project/sphinx-argparse-cli)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/sphinx-argparse-cli?style=flat-square)](https://pypistats.org/packages/sphinx-argparse-cli)
+[![Downloads](https://static.pepy.tech/badge/sphinx-argparse-cli/month)](https://pepy.tech/project/sphinx-argparse-cli)
 [![PyPI - License](https://img.shields.io/pypi/l/sphinx-argparse-cli?style=flat-square)](https://opensource.org/licenses/MIT)
 ![check](https://github.com/tox-dev/sphinx-argparse-cli/workflows/check/badge.svg?branch=main)
 
@@ -37,10 +37,12 @@ Within the reStructuredText files use the `sphinx_argparse_cli` directive that t
 | hook                   | (optional) hook `argparse` to retrieve the parser if `func` uses a parser instead of returning it.                                                                               |
 | title                  | (optional) when provided, overwrites the `<prog> - CLI interface` title added by default and when empty, will not be included                                                    |
 | description            | (optional) when provided, overwrites the description and when empty, will not be included                                                                                        |
+| epilog            | (optional) when provided, overwrites the epilog and when empty, will not be included                                                                                        |
 | usage_width            | (optional) how large should usage examples be - defaults to 100 character                                                                                                        |
+| usage_first            | (optional) show usage before description                                                                                                        |
 | group_title_prefix     | (optional) groups subsections title prefixes, accepts the string `{prog}` as a replacement for the program name - defaults to `{prog}`                                           |
 | group_sub_title_prefix | (optional) subcommands groups subsections title prefixes, accepts replacement of `{prog}` and `{subcommand}` for program and subcommand name - defaults to `{prog} {subcommand}` |
-| no_default_values      | (optional) supresses generation of `default` entries                                                                                                                             |
+| no_default_values      | (optional) suppresses generation of `default` entries                                                                                                                             |
 
 For example:
 

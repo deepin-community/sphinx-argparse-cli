@@ -1,6 +1,6 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.3
 Name: sphinx-argparse-cli
-Version: 1.11.1
+Version: 1.14.0
 Summary: render CLI arguments (sub-commands friendly) defined by argparse module
 Project-URL: Documentation, https://github.com/tox-dev/sphinx-argparse-cli#sphinx-argparse-cli
 Project-URL: Homepage, https://github.com/tox-dev/sphinx-argparse-cli
@@ -27,11 +27,11 @@ Classifier: Programming Language :: Python :: Implementation :: CPython
 Classifier: Topic :: Documentation
 Classifier: Topic :: Documentation :: Sphinx
 Requires-Python: >=3.8
-Requires-Dist: sphinx>=7.0.1
+Requires-Dist: sphinx>=7.1.2
 Provides-Extra: test
 Requires-Dist: covdefaults>=2.3; extra == 'test'
 Requires-Dist: pytest-cov>=4.1; extra == 'test'
-Requires-Dist: pytest>=7.3.2; extra == 'test'
+Requires-Dist: pytest>=7.4.3; extra == 'test'
 Description-Content-Type: text/markdown
 
 # sphinx-argparse-cli
@@ -39,7 +39,7 @@ Description-Content-Type: text/markdown
 [![PyPI](https://img.shields.io/pypi/v/sphinx-argparse-cli?style=flat-square)](https://pypi.org/project/sphinx-argparse-cli)
 [![PyPI - Implementation](https://img.shields.io/pypi/implementation/sphinx-argparse-cli?style=flat-square)](https://pypi.org/project/sphinx-argparse-cli)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sphinx-argparse-cli?style=flat-square)](https://pypi.org/project/sphinx-argparse-cli)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/sphinx-argparse-cli?style=flat-square)](https://pypistats.org/packages/sphinx-argparse-cli)
+[![Downloads](https://static.pepy.tech/badge/sphinx-argparse-cli/month)](https://pepy.tech/project/sphinx-argparse-cli)
 [![PyPI - License](https://img.shields.io/pypi/l/sphinx-argparse-cli?style=flat-square)](https://opensource.org/licenses/MIT)
 ![check](https://github.com/tox-dev/sphinx-argparse-cli/workflows/check/badge.svg?branch=main)
 
@@ -73,10 +73,12 @@ Within the reStructuredText files use the `sphinx_argparse_cli` directive that t
 | hook                   | (optional) hook `argparse` to retrieve the parser if `func` uses a parser instead of returning it.                                                                               |
 | title                  | (optional) when provided, overwrites the `<prog> - CLI interface` title added by default and when empty, will not be included                                                    |
 | description            | (optional) when provided, overwrites the description and when empty, will not be included                                                                                        |
+| epilog            | (optional) when provided, overwrites the epilog and when empty, will not be included                                                                                        |
 | usage_width            | (optional) how large should usage examples be - defaults to 100 character                                                                                                        |
+| usage_first            | (optional) show usage before description                                                                                                        |
 | group_title_prefix     | (optional) groups subsections title prefixes, accepts the string `{prog}` as a replacement for the program name - defaults to `{prog}`                                           |
 | group_sub_title_prefix | (optional) subcommands groups subsections title prefixes, accepts replacement of `{prog}` and `{subcommand}` for program and subcommand name - defaults to `{prog} {subcommand}` |
-| no_default_values      | (optional) supresses generation of `default` entries                                                                                                                             |
+| no_default_values      | (optional) suppresses generation of `default` entries                                                                                                                             |
 
 For example:
 
