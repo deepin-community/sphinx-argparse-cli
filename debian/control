@@ -13,7 +13,7 @@ Build-Depends:
  python3-hatch-vcs,
  python3-sphinx,
 Testsuite: autopkgtest-pkg-python
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Homepage: https://github.com/tox-dev/sphinx-argparse-cli
 Vcs-Browser: https://salsa.debian.org/python-team/packages/sphinx-argparse-cli
 Vcs-Git: https://salsa.debian.org/python-team/packages/sphinx-argparse-cli.git
